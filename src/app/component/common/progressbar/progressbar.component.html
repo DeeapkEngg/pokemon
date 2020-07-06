@@ -1,0 +1,12 @@
+<div class="box">
+    <div class="label">
+        {{label}}
+    </div>
+    <div class="prog" [style.box-shadow]="color">
+        <div class="prog-bar" [style.backgroundColor]="color"
+         [style.width]="getWidth(size)"
+        >
+          {{size}}
+        </div>
+      </div>
+</div>

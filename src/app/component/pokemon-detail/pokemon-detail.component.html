@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="box" *ngIf="pokemon">
+        <div class="intro" >
+          <div class="heading" [ngStyle]="{'background-color': pokemon.colors !== 'white'? pokemon.colors: 'black' }">
+            <span>{{pokemon.name}}</span>
+          </div>
+          <div class="data" >
+            <div class="pokemonType">
+                <div class="type"  *ngFor="let type of pokemon.types" [ngStyle]="{'background-color': colorType(type.type.name)}">
+                    <span [attr.type]="type.type.name"> {{type.type.name}}</span>
+                  </div>
+            </div>
+           
+           <div class="profile">
+              <div class="profileImg">
+                <img [src]="pokemon.profileImg"/>
+              </div>
+              <div class="pokemonStats">
+                <div *ngFor="let poke of pokemon.stats">
+                  <app-progressbar 
+                    base={{pokemon.base_experience}}
+                    label={{poke.stat.name}}
+                    size={{poke.base_stat}}
+                    color={{pokemon.colors}}></app-progressbar>
+                  </div>
+              </div>
+           </div>
+          </div>
+        </div>
+
+        <div class="intro" >
+            <div class="head" [ngStyle]="{'background-color': pokemon.colors !== 'white'? pokemon.colors: 'black' }">
+              <span>Profile</span>
+            </div>
+            <div class="content">
+            <div class="dataOther" >
+               <div class="field">
+                  <div class="fieldData">Height</div>
+                  <div class="fieldData">{{pokemon.height}}m</div>
+               </div>
+               <div class="field">
+                  <div class="fieldData">Weight</div>
+                  <div class="fieldData">{{pokemon.weight}}kg</div>
+               </div>
+              
+             </div>
+             <div class="dataOther" >
+                <div class="field">
+                   <div class="fieldData">Catch Rate</div>
+                   <div class="fieldData">{{pokemon.capture_rate}}</div>
+                </div>
+                <div class="field">
+                   <div class="fieldData">Gender Ratio</div>
+                   <div class="fieldData">{{pokemon.gender_rate}}</div>
+                </div>
+               
+              </div>
+              <div class="dataOther" >
+                  <div class="field">
+                     <div class="fieldData">Egg Groups</div>
+                     <div class="fieldData">{{pokemon.eggGroups}}</div>
+                  </div>
+                  <div class="field">
+                     <div class="fieldData">Hatch Steps</div>
+                     <div class="fieldData">{{pokemon.hatch_counter}}</div>
+                  </div>
+                 
+                </div>
+                <div class="dataOther" >
+                    <div class="field">
+                       <div class="fieldData">Abilties</div>
+                       <div class="fieldData">{{pokemon.ability}}</div>
+                    </div>
+                    <div class="field">
+                       <div class="fieldData">Evs</div>
+                       <div class="fieldData">35m</div>
+                    </div>
+                   
+                  </div>
+            </div>
+          </div>
+          <div class="intro" >
+              <div class="head" [ngStyle]="{'background-color': pokemon.colors !== 'white'? pokemon.colors: 'black' }">
+                <span>Evolution</span>
+              </div>
+              <div class="evolutioncontent">
+                 <img [src]="pokemon.profileImg" />
+                 <i class="fa fa-arrow-right" *ngIf="pokemon.evolvedImg" [ngStyle]="{'color': pokemon.colors !== 'white'? pokemon.colors: 'black' }"></i>
+                 <img [src]="pokemon.evolvedImg"  *ngIf="pokemon.evolvedImg"/>
+              </div>
+              <div class="text" *ngIf="pokemon.evolvedImg">
+                 <span>{{pokemon.name}} evolves into {{pokemon.evolvedName}} <b *ngIf="pokemon.level">at level {{pokemon.level}}</b></span>
+              </div>
+            </div>
+            <div class="intro" >
+                <div class="head" [ngStyle]="{'background-color': pokemon.colors !== 'white'? pokemon.colors: 'black' }">
+                  <span>Damage When Attacked</span>
+                </div>
+                <div class="damageWhenAttacked" >
+                  <div class="damage" *ngFor="let d of getDamaged();let i = index">
+                     <span [ngStyle]="{'background-color': randomColor(i)}">{{d}}</span> 
+                  </div>
+                </div>
+
+              </div> 
+    </div>
+ </div>

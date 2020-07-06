@@ -1,0 +1,139 @@
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: center;
+
+  .intro{
+    width: 100%;
+    min-height: 185px;
+    height: auto;
+    margin-bottom:20px;
+    .damageWhenAttacked{
+      display: grid;
+      grid-template-columns:1fr 1fr 1fr;
+      margin-top: 20px;
+      grid-gap: 6px;
+       .damage{
+          text-align: center;
+          span{
+            min-width: 100px;
+            display: block;
+            height: 24px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+          }
+       }
+    }
+    .fa-arrow-right{
+      font-size: 2rem;
+    }
+    .text{
+      text-align: center;
+    }
+    .evolutioncontent{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      img{
+        width: 100px;
+        height: 100px;
+      }
+    
+    }
+    .head{
+      width: 100%;
+      height: 50px;
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+    }
+    .heading{
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      border-radius: 5px;
+      color: white;
+      padding: 10px;
+      font-size: 24px;
+    }
+    .content{
+      margin: 20px;
+    }
+    .dataOther{
+      display: flex;
+
+      .field{
+        display: flex;
+        flex:1;
+        margin-right: 20px;
+        .fieldData{
+          flex: 1;
+          display: flex;
+          justify-content: flex-start;
+        }
+      }
+    }
+    .data{
+      width: 100%;
+      min-height: 40px;
+      height: auto;
+      display: flex;
+      margin-top: 20px;
+      flex-direction: column;
+      
+      .profile {
+        margin-top:20px;
+        display: flex;
+        align-items: center;
+        .profileImg{
+          flex-grow: 1;
+          img{
+            width: 130px;
+            height: 130px;
+          }
+        }
+        .pokemonStats{
+          flex-grow: 10;
+        }
+      }
+      .pokemonType {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      .type{
+        width:100px;
+        height: 100%;
+        border-radius: 5px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:10px;
+        border: none;
+        position: relative;
+        color: white;
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          background: transparent;
+          color: white;
+          width: 100%;
+          z-index: -1;
+        }
+      }
+    }
+  }
+  }
+}
+

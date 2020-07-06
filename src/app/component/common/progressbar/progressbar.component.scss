@@ -1,0 +1,26 @@
+.box{
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  .label{
+    margin-right: 20px;
+    text-transform: capitalize;
+    flex: 1;
+  }
+
+.prog{
+  width: 100px;
+  flex: 1;
+  height: 25px;
+  background: white;
+  border: 1px outset gray;
+  &-bar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+  
+}
+  }
+}

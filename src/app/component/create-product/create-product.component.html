@@ -1,0 +1,138 @@
+<div class="container">
+   <div class="box">
+     <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+     <div class="form" *ngFor="let x of t.controls; let i = index" >
+    <ng-container [formGroup]="x" >
+      <div class="field">
+          <div class="label">Name</div>                                 
+          <div class="data">
+              <input type="text"  placeholder="Enter product name" formControlName="name" />
+              <div class="error">
+              <div *ngIf="!checker('name',i).valid && (checker('name',i).dirty || checker('name',i).touched) ">
+                    <div *ngIf="checker('name',i).errors.minlength">
+                        Atleast 3 character needed
+                    </div>
+                    <div *ngIf="checker('name',i).errors.pattern">
+                           Only number and character
+                    </div>
+                    <div *ngIf="checker('name',i).errors.required">
+                           Name is required
+                        </div>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="field">
+          <div class="label">Description</div>
+          <div class="data">
+              <input type="text"  placeholder="Enter product description" formControlName="description"/>
+              <div class="error">
+                    <div *ngIf="!checker('description',i).valid && (checker('description',i).dirty || checker('description',i).touched) ">
+                          <div *ngIf="checker('description',i).errors.minlength">
+                              Atleast 3 character needed
+                          </div>
+                          <div *ngIf="checker('description',i).errors.pattern">
+                                 Only number and character
+                          </div>
+                          <div *ngIf="checker('description',i).errors.required">
+                               Description is required
+                         </div>
+                      </div>
+                    </div>
+                
+            </div>
+      </div>
+      <div class="field">
+          <div class="label">Price</div>
+          <div class="data">
+              <input type="text"  placeholder="Enter product price" formControlName="price" />
+              <div class="error">
+                    <div *ngIf="!checker('price',i).valid && (checker('price',i).dirty || checker('price',i).touched) ">
+                          <div *ngIf="checker('price',i).errors.required">
+                              Price is required
+                          </div>
+                          <div *ngIf="checker('price',i).errors.pattern">
+                              Only 10.00 or 10 format allowed
+                          </div>
+                      </div>
+                      
+                    </div>
+            </div>
+      </div>
+      <div class="field">
+          <div class="label">Category</div>
+          <div class="data">
+              <select formControlName="category">
+                  <option>Electonics</option>
+                 <option>Cloths</option>
+                 <option>Blankets</option>
+              </select>
+              <div class="error">
+                    <div *ngIf="!checker('category',i).valid && (checker('category',i).dirty || checker('category',i).touched) ">
+                          <div *ngIf="checker('category',i).errors.required">
+                               Price is required
+                            </div>
+                      </div>
+                      
+                    </div>
+          </div>
+      </div>
+      <div class="field">
+          <div class="label">Image URL</div>
+          <div class="data">
+              <input type="text"  placeholder="Enter product image link" formControlName ="imageUrl"/>
+              <div class="error">
+                    <div *ngIf="!checker('imageUrl',i).valid && (checker('imageUrl',i).dirty || checker('imageUrl',i).touched) ">
+                          <div *ngIf="checker('imageUrl',i).errors.required">
+                             Image link is required
+                          </div>
+                          <div *ngIf="checker('imageUrl',i).errors.pattern">
+                             Invalid link
+                          </div>
+                      </div>
+                    </div>
+            </div>
+      </div>
+      <div class="field slit">
+           <div class="data">
+            <div class="iconWith">
+                <i class="fa fa-phone"></i>
+                <input type="text"  placeholder="Phone number" formControlName ="phoneNumber"/>
+           </div>
+            <div class="error">
+                    <div *ngIf="!checker('phoneNumber',i).valid && (checker('phoneNumber',i).dirty || checker('phoneNumber',i).touched) ">
+                          <div *ngIf="checker('phoneNumber',i).errors.required">
+                             Phone number is required
+                          </div>
+                          <div *ngIf="checker('phoneNumber',i).errors.pattern">
+                             Invalid number
+                          </div>
+                          <div *ngIf="checker('phoneNumber',i).errors.maxlength">
+                                Number should be 10 digit
+                             </div>
+                      </div>
+                    </div>
+        </div>
+          <div class="data">
+             <select formControlName="select">
+                <option>Mobile</option>
+                <option>Landline</option>
+             </select>
+          </div>
+        </div>
+    </ng-container>
+</div>
+        
+      <div class="option">
+           <div class="newProd">
+               <button [ngClass]="[addButtonDisable ? 'btn-default': 'btn-primary' ]" [disabled]="addButtonDisable=== true" (click)="addNewProduct($event)">Add New product</button>
+           </div>
+           <div class="formButton">
+                <button class="btn-primary" (click)="resetForm($event)">Reset</button>
+                <button [ngClass]="[form.valid ? 'btn-primary' : 'btn-default' ]" type="submit" [disabled]="!form.valid">Submit</button>
+           </div>
+           
+        </div>
+    </form>
+   </div>
+  </div>

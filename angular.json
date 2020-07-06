@@ -6,7 +6,7 @@
     "pokeman-portal": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
+      "root": "e2e",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -119,6 +119,15 @@
           }
         }
       }
-    }},
-  "defaultProject": "pokeman-portal"
+    }
+  },
+  "defaultProject": "pokeman-portal",
+  "cli": {
+    "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

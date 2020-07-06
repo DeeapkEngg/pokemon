@@ -1,0 +1,22 @@
+<div class="header">
+  <div class="logo">
+    <img src="../../../assets/pokemon.png" />
+  </div>
+  <nav>
+      <ul  [hidden]="!displaySubList">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a  routerLink="/home" title="Home"  >Home</a></li>
+        <li routerLinkActive="active"><a  routerLink="/home/detail" title="Detail" href="#" >Detail</a></li>
+       <ng-container *ngIf="isAdmin"> <li  routerLinkActive="active"><a routerLink="/home/createProduct" title="Create Product" href="#" >Create Product</a></li></ng-container>
+       <ng-container *ngIf="isAdmin && isProductListContainData"> <li  routerLinkActive="active"><a routerLink="/home/productList" title="Product List" href="#" >Product List</a></li></ng-container>
+      </ul>
+    </nav>
+    <div class="searchBox">
+        <input name="search" (keyup)="searchFun(searchData)" [(ngModel)]="searchData" type="text" placeholder="Search Pokemon">
+    </div>
+    <div class="icon" (click)="toggleMenu(!displaySubList)" >
+        <span><i  [ngClass]="['fa', !displaySubList ? 'fa-bars' :  'fa-times']" aria-hidden="true"></i>
+        </span>
+    </div>
+</div>
+
+  

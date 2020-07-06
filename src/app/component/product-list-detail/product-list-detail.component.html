@@ -1,0 +1,45 @@
+<p *ngIf="!product">No product or invalid product Id</p>
+<div class="box" *ngIf="product">
+  
+   <div class="Image">
+      <img [src]="product.imageUrl" />
+   </div>
+   <div class="details">
+     <div class="field">
+        <label>
+            Product Name
+        </label>
+        <p>{{product.name}}</p>
+     </div>  
+     <div class="field">
+        <label>
+            Product Description
+        </label>
+        <p>{{product.description}}</p>
+     </div> 
+     <div class="field">
+        <label>
+            Product Price
+        </label>
+        <p>{{product.price}}</p>
+     </div> 
+     <div class="field">
+        <label>
+            Product Category
+        </label>
+        <p>{{product.category}}</p>
+     </div> 
+     <div class="field">
+        <label>
+            Product Phone
+        </label>
+        <p>{{product.phoneNumber}}</p>
+     </div> 
+     <div class="field" *ngIf="product.select">
+        <label>
+            Product select
+        </label>
+        <p>{{product.select}}</p>
+     </div> 
+   </div>
+</div>

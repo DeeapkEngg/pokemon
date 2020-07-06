@@ -1,0 +1,13 @@
+<div class="container" *ngIf="!route.children.length">
+   <div class="box">
+      <div class="content" *ngFor="let feed of pokeFeed | filterpokemon: headerVal">
+          <app-tiles [link]="link" [id]="feed.id" [name]="feed.name" [imagePath]="feed.url"></app-tiles>
+      </div>
+   </div>
+   <div class="pagination">
+      <button (click)="pageHandler('previous')">Previous</button>
+      <button (click)="pageHandler('next')">Next</button>
+   </div>
+</div>
+<router-outlet></router-outlet>
+
