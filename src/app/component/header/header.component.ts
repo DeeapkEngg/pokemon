@@ -10,7 +10,7 @@ import { PokemonFeedService } from 'src/app/service/pokemon-feed.service';
 })
 export class HeaderComponent implements OnInit {
   
-  displaySubList: boolean = false
+  displaySubList: boolean = true
   searchData: string =  null
   isAdmin:boolean
   isProductListContainData: boolean = false
