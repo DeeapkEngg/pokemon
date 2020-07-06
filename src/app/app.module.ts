@@ -18,6 +18,7 @@ import { ProductListComponent } from './component/product-list/product-list.comp
 import { CreateProductComponent } from './component/create-product/create-product.component';
 import { ProductListDetailComponent } from './component/product-list-detail/product-list-detail.component';
 import { DetailsComponent } from './component/details/details.component';
+import { AuthComponent } from './component/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DetailsComponent } from './component/details/details.component';
     CreateProductComponent,
     ProductListDetailComponent,
     DetailsComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

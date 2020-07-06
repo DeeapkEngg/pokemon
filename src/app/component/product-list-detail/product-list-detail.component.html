@@ -7,39 +7,33 @@
    <div class="details">
      <div class="field">
         <label>
-            Product Name
+            Name
         </label>
         <p>{{product.name}}</p>
      </div>  
      <div class="field">
         <label>
-            Product Description
+            Description
         </label>
         <p>{{product.description}}</p>
      </div> 
      <div class="field">
         <label>
-            Product Price
+           Price
         </label>
         <p>{{product.price}}</p>
      </div> 
      <div class="field">
         <label>
-            Product Category
+           Category
         </label>
         <p>{{product.category}}</p>
      </div> 
      <div class="field">
         <label>
-            Product Phone
+            Phone ({{product.select}})
         </label>
         <p>{{product.phoneNumber}}</p>
-     </div> 
-     <div class="field" *ngIf="product.select">
-        <label>
-            Product select
-        </label>
-        <p>{{product.select}}</p>
      </div> 
    </div>
 </div>
