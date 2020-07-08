@@ -1,8 +1,10 @@
+
 .box {
   display: flex;
   flex-wrap: wrap;
   margin-top: 30px;
   justify-content: center;
+  position: relative;
 
   .intro{
     width: 100%;

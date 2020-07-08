@@ -1,5 +1,7 @@
 <div class="container">
-    <div class="box" *ngIf="pokemon">
+    <div class="box" >
+        <app-loader [isloading]="loader"></app-loader>
+        <ng-container *ngIf="pokemon">
         <div class="intro" >
           <div class="heading" [ngStyle]="{'background-color': pokemon.colors !== 'white'? pokemon.colors: 'black' }">
             <span>{{pokemon.name}}</span>
@@ -103,5 +105,6 @@
                 </div>
 
               </div> 
+            </ng-container>
     </div>
  </div>

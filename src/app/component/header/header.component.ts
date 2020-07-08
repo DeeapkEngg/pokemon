@@ -9,32 +9,32 @@ import { PokemonFeedService } from 'src/app/service/pokemon-feed.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  
-  displaySubList: boolean = true
-  searchData: string =  null
-  isAdmin:boolean
-  isProductListContainData: boolean = false
 
-  constructor(private head: SharedDataService, 
-    private userService: UserServiceService,
-    private pokemon: PokemonFeedService
+  displaySubList = true;
+  searchData: string =  null;
+  isAdmin: boolean;
+  isProductListContainData = false;
+
+  constructor(private head: SharedDataService,
+              private userService: UserServiceService,
+              private pokemon: PokemonFeedService
     ) { }
 
-  
+
   ngOnInit(): void {
     this.userService.getProfile().subscribe((data: boolean) => {
-     this.isAdmin = data
-    })
+     this.isAdmin = data;
+    });
 
     this.pokemon.isProductList().subscribe((data: boolean) => {
-      this.isProductListContainData  = data
-    })
+      this.isProductListContainData  = data;
+    });
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event:any) {
+  onResize(event: any) {
       const size = event.target.innerWidth;
-      if(size > 1000){
+      if (size > 1000){
         this.displaySubList = true;
       } else {
         this.displaySubList = false;
@@ -42,10 +42,10 @@ export class HeaderComponent implements OnInit {
   }
 
 searchFun(value: string){
-    this.head.sendValue(value)
+    this.head.sendValue(value);
  }
 
 toggleMenu(value: boolean){
-    this.displaySubList = value
+    this.displaySubList = value;
   }
 }

@@ -7,8 +7,8 @@ import { Subject, Observable } from 'rxjs';
 export class SharedDataService {
   searchBarChange: Subject<string> = new Subject<string>();
 
-  sendValue(val:string){
-      this.searchBarChange.next(val)
+  sendValue(val: string){
+      this.searchBarChange.next(val);
   }
 
   getValue(): Observable<string> {

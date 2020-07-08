@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   min-height: 50vh;
+  position: relative;
 }
 .pagination{
 display: flex;
@@ -11,8 +12,7 @@ justify-content: center;
 button{
   width: 100px;
   height: 30px;
-  background: #2d7e9e;
   margin: 10px;
   border: none;
-  color: white;
+
 }

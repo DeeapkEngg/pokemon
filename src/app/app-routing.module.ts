@@ -10,20 +10,24 @@ import { DetailsComponent } from './component/details/details.component';
 import { ProductListDetailComponent } from './component/product-list-detail/product-list-detail.component';
 
 const routes: Routes = [
-  { path: '',   redirectTo: '/home', pathMatch: 'full'}, 
-  { path: 'home', component:HomeComponent, 
+  { path: '',   redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent,
     children: [
-      {path: 'detail', component: DetailsComponent, 
+      {path: 'detail', component: DetailsComponent,
         children: [
           {path: 'pokemon/:id', component: PokemonDetailComponent},
           {path: 'productList/:id', component: ProductListDetailComponent},
+          {path: '**', redirectTo: '/home'}
         ]
        },
       { path : 'createProduct', component: CreateProductComponent, canActivate: [AuthguardService]},
-      { path : 'productList', component: ProductListComponent,canActivate: [AuthguardService,ProductListGuardService]}
+      { path : 'productList', component: ProductListComponent, canActivate: [AuthguardService, ProductListGuardService]},
+      {path: '**', redirectTo: '/home'}
+
     ]
   },
-  
+  {path: '**', redirectTo: '/home'}
+
 ];
 
 @NgModule({

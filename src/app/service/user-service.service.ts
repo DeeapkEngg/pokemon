@@ -5,10 +5,10 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class UserServiceService {
-  isAdmin: boolean =  true
+  isAdmin =  true;
   constructor() { }
 
   getProfile() {
-    return of(this.isAdmin)
+    return of(this.isAdmin);
   }
 }

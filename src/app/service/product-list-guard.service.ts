@@ -7,12 +7,12 @@ import { PokemonFeedService } from './pokemon-feed.service';
 })
 export class ProductListGuardService implements CanActivate{
   canActivate() {
-     const productList = this.pokemonFeed.getData()
-     if(productList.length === 0){
+     const productList = this.pokemonFeed.getData();
+     if (productList.length === 0){
        this.route.navigate(['home']);
-       return false
-     } 
-     return true
+       return false;
+     }
+     return true;
    }
 
   constructor(private pokemonFeed: PokemonFeedService, private route: Router) { }

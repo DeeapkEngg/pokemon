@@ -6,11 +6,11 @@ import { Pokemon } from 'src/app/service/PokemonFeedSchema';
 })
 export class FilterpokemonPipe implements PipeTransform {
 
-  transform(pokemon:Pokemon[], value:string): Pokemon[] {
-    if(!value || !pokemon || (value && value.length <3)){
-     return pokemon
-    } 
-    return pokemon.filter((item:Pokemon) => item.name.toLowerCase().startsWith(value.toLowerCase()))
- 
+  transform(pokemon: Pokemon[], value: string): Pokemon[] {
+    if (!value || !pokemon || (value && value.length < 3)){
+     return pokemon;
+    }
+    return pokemon.filter((item: Pokemon) => item.name.toLowerCase().startsWith(value.toLowerCase()));
+
   }
 }

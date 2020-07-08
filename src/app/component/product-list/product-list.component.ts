@@ -7,12 +7,12 @@ import { PokemonFeedService } from 'src/app/service/pokemon-feed.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  productList: Array<Object> 
-  link:string = "../../home/detail/productList"
+  productList: Array<object>;
+  link = '../../home/detail/productList';
   constructor(private pokemonfeed: PokemonFeedService) { }
 
   ngOnInit(): void {
-    this.productList = this.pokemonfeed.productList || this.pokemonfeed.getData()
+    this.productList = this.pokemonfeed.productList || this.pokemonfeed.getData();
   }
-  
+
 }

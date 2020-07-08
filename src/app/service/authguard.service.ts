@@ -7,16 +7,16 @@ import { CanActivate, Router } from '@angular/router';
 })
 export class AuthguardService implements CanActivate {
 
-  canActivate():boolean{
-    if(!this.profile.isAdmin){
+  canActivate(): boolean{
+    if (!this.profile.isAdmin){
       this.route.navigate(['home']);
       return false;
     }
     return true;
   }
-  
 
-  constructor(private profile: UserServiceService, private route: Router) { 
-    
+
+  constructor(private profile: UserServiceService, private route: Router) {
+
   }
 }
