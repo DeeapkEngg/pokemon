@@ -26,6 +26,9 @@ export class ProductListDetailComponent implements OnInit, OnDestroy {
       this.destroyer = this.route.params.subscribe((item: any) => {
 
         if (this.pokemon.productList && this.user.isAdmin){
+           if(this.pokemon.productList.length === 0){
+             this.pokemon.getData()
+           }
           this.product = this.pokemon.productList[Number(item.id)];
 
         } else {

@@ -1,8 +1,13 @@
+.container{
+  min-height: 500px;
+  margin-bottom: 10px;
+}
 .box{
    display: grid;
     grid-template-columns: 200px 1fr;
     margin-top: 40px;
     grid-gap:20px;
+  
   .Image{
     grid-column: 1 /1;
     img{
