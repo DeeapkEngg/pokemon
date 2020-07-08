@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { SharedDataService } from 'src/app/service/shared-data.service';
 import { UserServiceService } from 'src/app/service/user-service.service';
-import { PokemonFeedService } from 'src/app/service/pokemon-feed.service';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +16,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(private head: SharedDataService,
               private userService: UserServiceService,
-              private pokemon: PokemonFeedService
     ) { }
 
 
@@ -26,8 +24,8 @@ export class HeaderComponent implements OnInit {
      this.isAdmin = data;
     });
 
-    this.pokemon.isProductList().subscribe((data: boolean) => {
-      this.isProductListContainData  = data;
+    this.head.getProduct().subscribe((data: boolean) => {
+      this.isProductListContainData = data;
     });
   }
 
@@ -42,7 +40,7 @@ export class HeaderComponent implements OnInit {
   }
 
 searchFun(value: string){
-    this.head.sendValue(value);
+   this.head.sendValue(value);
  }
 
 toggleMenu(value: boolean){

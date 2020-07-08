@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.fetchingData(this.next);
     this.head.getValue().subscribe(data => this.headerVal =  data);
+
   }
 
    pageHandler(button: string): void{

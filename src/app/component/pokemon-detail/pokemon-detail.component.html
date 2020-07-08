@@ -1,6 +1,7 @@
 <div class="container">
+    <app-loader [isloading]="loader"></app-loader>
+
     <div class="box" >
-        <app-loader [isloading]="loader"></app-loader>
         <ng-container *ngIf="pokemon">
         <div class="intro" >
           <div class="heading" [ngStyle]="{'background-color': pokemon.colors !== 'white'? pokemon.colors: 'black' }">

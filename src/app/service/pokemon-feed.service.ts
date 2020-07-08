@@ -8,7 +8,6 @@ import { PokemonFeed, PokemonDetails, Product, } from './PokemonFeedSchema';
   providedIn: 'root'
 })
 export class PokemonFeedService {
-  isProductListExist = false;
   productList: Array<Product> = [];
   constructor(public http: HttpClient) { }
 
@@ -36,14 +35,8 @@ export class PokemonFeedService {
     const data =  window.localStorage.getItem('productList') || '[]';
     const check = JSON.parse(data);
     if (check.length){
-      this.isProductListExist = true;
       this.productList = check;
     }
     return check;
-  }
-
-  isProductList(): Observable<boolean> {
-      this.getData();
-      return of(this.isProductListExist);
   }
 }

@@ -2,7 +2,7 @@
    
    <div class="box">
          <app-loader [isloading]="loader"></app-loader>
-
+      <div *ngIf="!pokeFeed.length">No pokemon found</div>
       <div class="content" *ngFor="let feed of pokeFeed | filterpokemon: headerVal">
           <app-tiles [link]="link" [id]="feed.id" [name]="feed.name" [imagePath]="feed.url"></app-tiles>
       </div>

@@ -6,7 +6,6 @@ import {
   PokemonDetails, PokemonSpecies,
   EvolutionDetails, DamageClass, Move } from 'src/app/service/PokemonFeedSchema';
 import { Subscription } from 'rxjs';
-import { LoaderComponent } from 'src/app/common/loader/loader.component';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -38,9 +37,8 @@ export class PokemonDetailComponent implements OnInit, OnDestroy {
   damage: object = {};
   destroyer: Subscription;
   loader = false;
-  ngOnDestroy(): void {
-    this.destroyer.unsubscribe();
-  }
+
+  
 
   ngOnInit(): void {
 
@@ -165,5 +163,9 @@ export class PokemonDetailComponent implements OnInit, OnDestroy {
   randomColor(i: number){
     const randomColor = i % 11;
     return this.colorDict[Object.keys(this.colorDict)[randomColor]];
+  }
+
+  ngOnDestroy(): void {
+    this.destroyer.unsubscribe();
   }
 }

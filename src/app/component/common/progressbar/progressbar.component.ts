@@ -16,7 +16,7 @@ export class ProgressbarComponent implements OnInit {
   }
 
   getWidth(size: number){
-    const percent = (100 - (Math.ceil(size / this.base * 100)));
+    const percent = Math.abs((100 - (Math.ceil(size / this.base * 100))));
     return `calc(100% - ${percent}px)`;
   }
 

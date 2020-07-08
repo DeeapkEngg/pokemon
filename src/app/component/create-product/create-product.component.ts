@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { SharedDataService } from 'src/app/service/shared-data.service';
 
 @Component({
   selector: 'app-create-product',
@@ -16,7 +17,7 @@ export class CreateProductComponent implements OnInit {
     decimal: '^[0-9]+(\.[0-9]{1,2})?$',
     url: '^http(s?)://[a-zA-Z0-9._&?=/-]+.(jpg|jpeg|png|gif)$'
   };
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private share: SharedDataService) {
   }
 
   ngOnInit(): void {
@@ -37,6 +38,7 @@ export class CreateProductComponent implements OnInit {
     const data =  JSON.parse(productList);
     formValues.forEach(formValue => data.push(formValue));
     window.localStorage.setItem('productList', JSON.stringify(data));
+    this.share.sendProductCacheValue(true);
     this.resetForm();
   }
 
