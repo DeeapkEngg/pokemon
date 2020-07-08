@@ -1,6 +1,8 @@
 .box{
  position: relative;
  margin-top: 20px;
+ min-height: 600px;
+ margin-bottom: 20px;
  .error{
    color:red;
    font-size: 10px;
