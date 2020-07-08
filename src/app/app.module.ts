@@ -19,6 +19,7 @@ import { CreateProductComponent } from './component/create-product/create-produc
 import { ProductListDetailComponent } from './component/product-list-detail/product-list-detail.component';
 import { DetailsComponent } from './component/details/details.component';
 import { LoaderComponent } from './common/loader/loader.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { LoaderComponent } from './common/loader/loader.component';
     ProductListDetailComponent,
     DetailsComponent,
     LoaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
